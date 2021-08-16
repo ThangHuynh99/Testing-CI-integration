@@ -52,4 +52,9 @@ public class NewAPI {
 	public void deleteNew(@RequestBody long[] ids) {
 		iNewService.delete(ids);
 	}
+	
+	@GetMapping(value = "/new/{id}")
+	public NewDTO getByID(@PathVariable("id") long id) {
+		return iNewService.findOne(id);
+	}
 }
